@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Top Up Mobile Legends</title>
+
+<style>
+body {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  font-family: Arial;
+}
+
+.box {
+  background: #020617;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 15px;
+}
+
+button {
+  background: #22c55e;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🎮 Mobile Legends 🎮</h2>
+
+<div class="box">
+
+<select id="nominal">
+  <option>86 Diamond - 15.000</option>
+  <option>172 Diamond - 30.000</option>
+</select>
+
+<br><br>
+
+<input type="text" id="idgame" placeholder="Masukkan ID + Server">
+
+<br><br>
+
+<button onclick="order()">⚡ ORDER SEKARANG</button>
+
+</div>
+
+<script>
+function order() {
+  var id = document.getElementById("idgame").value;
+  var nominal = document.getElementById("nominal").value;
+
+  var pesan = "Top Up Mobile Legends\nID: " + id +
+              "\nNominal: " + nominal;
+
+  var nomor = "6285136564872"; 
+
+  var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
