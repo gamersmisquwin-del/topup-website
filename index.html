@@ -2,36 +2,70 @@
 <html>
 <head>
   <title>Top Up Game store</title>
+ 
+  <style>
+body {
+  background-color: #0f172a;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+button {
+  background-color: #22c55e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+}
+</style>
+
 </head>
 <body>
 
 <h2>Top Up Game Murah 🔥</h2>
 
+<label>Pilih Game:</label><br>
+<select id="game">
+  <option>Mobile Legends</option>
+  <option>Free Fire</option>
+  <option>PUBG Mobile</option>
+</select><br><br>
+
 <label>ID Game:</label><br>
 <input type="text" id="idgame"><br><br>
+
 
 <label>Pilih Nominal:</label><br>
 <select id="nominal">
   <option value="86 DM - 15000">86 Diamond - 15.000</option>
   <option value="172 DM - 30000">172 Diamond - 30.000</option>
+
+  <option>FF 70 Diamond - 10.000</option>
+<option>FF 140 Diamond - 20.000</option>
+<option>PUBG 60 UC - 15.000</option>
+<option>PUBG 120 UC - 30.000</option>
 </select><br><br>
 
 <button onclick="kirim()">Order Sekarang</button>
 
-<script>
+  <script>
 function kirim() {
+  var game = document.getElementById("game").value;
   var id = document.getElementById("idgame").value;
   var nominal = document.getElementById("nominal").value;
 
-  var pesan = "Halo, saya mau top up:\nID: " + id + "\nNominal: " + nominal;
+  var pesan = "Halo, saya mau top up:\nGame: " + game +
+              "\nID: " + id +
+              "\nNominal: " + nominal;
 
   var nomor = "6285136564872";
+  
 
   var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
 
   window.open(url, '_blank');
 }
-</script>
-
+              </script>
 </body>
 </html>
