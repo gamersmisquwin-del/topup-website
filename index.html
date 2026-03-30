@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top Up Game store</title>
+</head>
+<body>
+
+<h2>Top Up Game Murah 🔥</h2>
+
+<label>ID Game:</label><br>
+<input type="text" id="idgame"><br><br>
+
+<label>Pilih Nominal:</label><br>
+<select id="nominal">
+  <option value="86 DM - 15000">86 Diamond - 15.000</option>
+  <option value="172 DM - 30000">172 Diamond - 30.000</option>
+</select><br><br>
+
+<button onclick="kirim()">Order Sekarang</button>
+
+<script>
+function kirim() {
+  var id = document.getElementById("idgame").value;
+  var nominal = document.getElementById("nominal").value;
+
+  var pesan = "Halo, saya mau top up:\nID: " + id + "\nNominal: " + nominal;
+
+  var nomor = "6285136564872";
+
+  var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
